@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════
+   BASE STYLES — Premium AgriLink Design System
+   ═══════════════════════════════════════════════════ */
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-50 text-surface-800 antialiased;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-400;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   COMPONENT STYLES
+   ═══════════════════════════════════════════════════ */
+
+@layer components {
+  /* Glass Card */
+  .card-glass {
+    @apply rounded-2xl border border-white/60 bg-white/70 p-5 shadow-glass backdrop-blur-xl;
+  }
+
+  /* Solid Card */
+  .card-shell {
+    @apply rounded-2xl border border-surface-200/80 bg-white p-5 shadow-soft transition-shadow duration-300;
+  }
+
+  .card-shell:hover {
+    @apply shadow-card-hover;
+  }
+
+  /* Spinner */
+  .spinner {
+    @apply h-5 w-5 animate-spin rounded-full border-2 border-brand border-t-transparent;
+  }
+
+  /* Premium Input */
+  .input-field {
+    @apply w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-surface-800 outline-none transition-all duration-200 placeholder:text-surface-400;
+    @apply focus:border-brand focus:ring-2 focus:ring-brand-100 focus:shadow-glow;
+  }
+
+  /* Premium Select */
+  .select-field {
+    @apply w-full appearance-none rounded-xl border border-surface-200 bg-white px-4 py-3 text-surface-800 outline-none transition-all duration-200;
+    @apply focus:border-brand focus:ring-2 focus:ring-brand-100;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    padding-right: 2.5rem;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200;
+    @apply hover:bg-brand-700 hover:shadow-glow hover:-translate-y-0.5;
+    @apply active:translate-y-0 active:shadow-soft;
+    @apply disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-sm;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-surface-200 bg-white px-6 py-3 text-sm font-semibold text-surface-700 shadow-sm transition-all duration-200;
+    @apply hover:bg-surface-50 hover:border-surface-300 hover:-translate-y-0.5;
+    @apply active:translate-y-0;
+  }
+
+  /* Ghost Button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-brand transition-all duration-200;
+    @apply hover:bg-brand-50;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .badge-success {
+    @apply badge bg-brand-100 text-brand-700;
+  }
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+  .badge-info {
+    @apply badge bg-blue-100 text-blue-700;
+  }
+  .badge-danger {
+    @apply badge bg-rose-100 text-rose-700;
+  }
+  .badge-neutral {
+    @apply badge bg-surface-100 text-surface-600;
+  }
+
+  /* Section Header */
+  .section-title {
+    @apply text-2xl font-bold text-surface-900;
+  }
+  .section-subtitle {
+    @apply mt-1 text-sm text-surface-500;
+  }
+
+  /* Stat Card */
+  .stat-card {
+    @apply card-shell flex items-center gap-4 p-5;
+  }
+  .stat-icon {
+    @apply flex h-12 w-12 items-center justify-center rounded-xl text-2xl;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   UTILITY STYLES
+   ═══════════════════════════════════════════════════ */
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #059669, #10b981, #34d399);
+  }
+
+  .bg-glass {
+    @apply bg-white/70 backdrop-blur-xl;
+  }
+
+  .border-glass {
+    @apply border border-white/30;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATION — Stagger children  
+   ═══════════════════════════════════════════════════ */
+
+.stagger-children > * {
+  opacity: 0;
+  animation: slideUp 0.5s ease-out forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.10s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.20s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.30s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.40s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.45s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(5, 150, 105, 0); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Smooth transitions for interactive elements */
+button, input, select, textarea, a {
+  transition: all 0.2s ease;
+}
+
+/* Line Clamping */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
