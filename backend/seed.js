@@ -65,6 +65,28 @@ const buyerData = [
   },
 ];
 
+// ─── Crop Images (Unsplash URLs) ────────────────────────────────────────────
+const CROP_IMAGES = {
+  "Tomato": "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?auto=format&fit=crop&w=900&q=80",
+  "Onion": "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?auto=format&fit=crop&w=900&q=80",
+  "Potato": "https://plus.unsplash.com/premium_photo-1664372599369-dd9f4ee07254?auto=format&fit=crop&w=900&q=80",
+  "Pomegranate": "https://plus.unsplash.com/premium_photo-1668076515507-c5bc223c99a4?auto=format&fit=crop&w=900&q=80",
+  "Grapes": "https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=900&q=80",
+  "Wheat": "https://plus.unsplash.com/premium_photo-1661963447711-27f892ffe292?auto=format&fit=crop&w=900&q=80",
+  "Mustard": "https://plus.unsplash.com/premium_photo-1671130295236-e8afa3ac38c9?auto=format&fit=crop&w=900&q=80",
+  "Guava": "https://images.unsplash.com/photo-1689996647099-a7a0b67fd2f6?auto=format&fit=crop&w=900&q=80",
+  "Rice (Basmati)": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=80",
+  "Cotton": "https://images.unsplash.com/photo-1616431101491-554c0932ea40?auto=format&fit=crop&w=900&q=80",
+  "Banana": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=900&q=80",
+  "Groundnut": "https://plus.unsplash.com/premium_photo-1667773157798-55785dd16b0a?auto=format&fit=crop&w=900&q=80",
+  "Red Chilli": "https://images.unsplash.com/photo-1526346698789-22fd84314424?auto=format&fit=crop&w=900&q=80",
+  "Turmeric": "https://images.unsplash.com/photo-1606951444141-e5533feb55be?auto=format&fit=crop&w=900&q=80",
+  "Sunflower Seeds": "https://plus.unsplash.com/premium_photo-1726072386964-62fe47163be7?auto=format&fit=crop&w=900&q=80",
+  "Brinjal (Eggplant)": "https://images.unsplash.com/photo-1615484477201-9f4953340fab?auto=format&fit=crop&w=900&q=80",
+  "Chickpea (Chana)": "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=80",
+  "Mango (Alphonso)": "https://images.unsplash.com/photo-1591073113125-e46713c829ed?auto=format&fit=crop&w=900&q=80",
+};
+
 // ─── Listings (FIXED IMAGES) ────────────────────────────────────────────────
 const listingTemplates = [
   // ── Rajesh Kumar ─────────────────────────────────────────────────────────
@@ -76,7 +98,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-09-10"),
     description: "Fresh red tomatoes for wholesale.",
     location: { district: "Nashik", state: "Maharashtra" },
-    images: ["https://images.unsplash.com/photo-1582284540020-8acbe03f4924"],
+    images: [CROP_IMAGES["Tomato"]],
     status: "active",
   },
   {
@@ -87,7 +109,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-08-28"),
     description: "Storage-grade onions.",
     location: { district: "Nashik", state: "Maharashtra" },
-    images: ["https://images.unsplash.com/photo-1587049633312-d628ae50a8ae"],
+    images: [CROP_IMAGES["Onion"]],
     status: "active",
   },
   {
@@ -98,7 +120,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-09-20"),
     description: "Premium pomegranates.",
     location: { district: "Nashik", state: "Maharashtra" },
-    images: ["https://plus.unsplash.com/premium_photo-1668076515507-c5bc223c99a4"],
+    images: [CROP_IMAGES["Pomegranate"]],
     status: "active",
   },
   {
@@ -109,7 +131,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-08-15"),
     description: "Fresh grapes.",
     location: { district: "Nashik", state: "Maharashtra" },
-    images: ["https://images.unsplash.com/photo-1537640538966-79f369143f8f"],
+    images: [CROP_IMAGES["Grapes"]],
     status: "active",
   },
 
@@ -122,7 +144,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-07-30"),
     description: "High-quality wheat.",
     location: { district: "Ludhiana", state: "Punjab" },
-    images: ["https://plus.unsplash.com/premium_photo-1661963447711-27f892ffe292"],
+    images: [CROP_IMAGES["Wheat"]],
     status: "active",
   },
   {
@@ -133,7 +155,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-08-10"),
     description: "Yellow mustard seeds.",
     location: { district: "Ludhiana", state: "Punjab" },
-    images: ["https://plus.unsplash.com/premium_photo-1671130295236-e8afa3ac38c9"],
+    images: [CROP_IMAGES["Mustard"]],
     status: "active",
   },
   {
@@ -144,7 +166,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-09-05"),
     description: "Fresh guavas.",
     location: { district: "Ludhiana", state: "Punjab" },
-    images: ["https://images.unsplash.com/photo-1689996647099-a7a0b67fd2f6"],
+    images: [CROP_IMAGES["Guava"]],
     status: "active",
   },
   {
@@ -155,7 +177,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-10-01"),
     description: "Premium basmati rice.",
     location: { district: "Ludhiana", state: "Punjab" },
-    images: ["https://images.unsplash.com/photo-1586201375761-83865001e31c"],
+    images: [CROP_IMAGES["Rice (Basmati)"]],
     status: "active",
   },
 
@@ -168,7 +190,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-11-15"),
     description: "Bt cotton.",
     location: { district: "Anand", state: "Gujarat" },
-    images: ["http://images.unsplash.com/photo-1616431101491-554c0932ea40"],
+    images: [CROP_IMAGES["Cotton"]],
     status: "active",
   },
   {
@@ -179,7 +201,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-08-25"),
     description: "Cavendish bananas.",
     location: { district: "Anand", state: "Gujarat" },
-    images: ["https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e"],
+    images: [CROP_IMAGES["Banana"]],
     status: "active",
   },
   {
@@ -190,7 +212,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-08-05"),
     description: "Fresh potatoes.",
     location: { district: "Anand", state: "Gujarat" },
-    images: ["http://plus.unsplash.com/premium_photo-1664372599369-dd9f4ee07254"],
+    images: [CROP_IMAGES["Potato"]],
     status: "active",
   },
   {
@@ -201,7 +223,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-10-20"),
     description: "Quality groundnuts.",
     location: { district: "Anand", state: "Gujarat" },
-    images: ["http://plus.unsplash.com/premium_photo-1667773157798-55785dd16b0a"],
+    images: [CROP_IMAGES["Groundnut"]],
     status: "active",
   },
 
@@ -214,7 +236,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-09-30"),
     description: "Dry red chillies.",
     location: { district: "Kurnool", state: "Andhra Pradesh" },
-    images: ["https://images.unsplash.com/photo-1526346698789-22fd84314424"],
+    images: [CROP_IMAGES["Red Chilli"]],
     status: "active",
   },
   {
@@ -225,7 +247,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-10-10"),
     description: "Fresh turmeric.",
     location: { district: "Kurnool", state: "Andhra Pradesh" },
-    images: ["https://images.unsplash.com/photo-1702041295331-840d4d9aa7c9"],
+    images: [CROP_IMAGES["Turmeric"]],
     status: "active",
   },
   {
@@ -236,7 +258,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-09-25"),
     description: "Sunflower seeds.",
     location: { district: "Kurnool", state: "Andhra Pradesh" },
-    images: ["http://plus.unsplash.com/premium_photo-1726072386964-62fe47163be7"],
+    images: [CROP_IMAGES["Sunflower Seeds"]],
     status: "active",
   },
   {
@@ -247,7 +269,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-08-20"),
     description: "Fresh brinjal.",
     location: { district: "Kurnool", state: "Andhra Pradesh" },
-    images: ["https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=900&q=80"],
+    images: [CROP_IMAGES["Brinjal (Eggplant)"]],
     status: "active",
   },
   {
@@ -258,7 +280,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-09-15"),
     description: "Chana.",
     location: { district: "Kurnool", state: "Andhra Pradesh" },
-    images: ["https://images.unsplash.com/photo-1515543904379-3d757afe72e4"],
+    images: [CROP_IMAGES["Chickpea (Chana)"]],
     status: "active",
   },
   {
@@ -269,7 +291,7 @@ const listingTemplates = [
     harvestDate: new Date("2025-08-12"),
     description: "Alphonso mango.",
     location: { district: "Kurnool", state: "Andhra Pradesh" },
-    images: ["https://images.unsplash.com/photo-1591073113125-e46713c829ed"],
+    images: [CROP_IMAGES["Mango (Alphonso)"]],
     status: "active",
   },
 ];
