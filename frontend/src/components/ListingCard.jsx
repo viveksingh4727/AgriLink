@@ -71,12 +71,12 @@ const getCropImage = (listing) => {
   if (listing.images?.[0] && !listing.images[0].startsWith("http")) {
     return buildAssetUrl(listing.images[0]);
   }
-  // 2. Lookup by crop name (case-insensitive partial match)
+  // 2. If DB has an http image URL (from seed data), use it directly
+  if (listing.images?.[0]?.startsWith("http")) return listing.images[0];
+  // 3. Lookup by crop name (case-insensitive partial match)
   const name = (listing.cropName || "").toLowerCase();
   const matchedKey = Object.keys(CROP_IMAGES).find((key) => name.includes(key));
   if (matchedKey) return CROP_IMAGES[matchedKey];
-  // 3. If DB has an http image URL, use it directly
-  if (listing.images?.[0]?.startsWith("http")) return listing.images[0];
   // 4. Fall back to category image
   return CATEGORY_IMAGES[listing.category] || CATEGORY_IMAGES.vegetable;
 };
